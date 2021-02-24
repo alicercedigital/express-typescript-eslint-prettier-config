@@ -1,0 +1,11 @@
+export const NODE_ENV = process.env.NODE_ENV || '';
+export const PORT = process.env.PORT || '';
+export const USE_SSL = process.env.USE_SSL || '';
+export const PRIVATE_KEY_PATH = process.env.PRIVATE_KEY_PATH || '';
+export const PUBLIC_KEY_PATH = process.env.PUBLIC_KEY_PATH || '';
+export const HOST_PRODUCTION = process.env.HOST_PRODUCTION || '';
+export const HOST_DEVELOPMENT = process.env.HOST_DEVELOPMENT || '';
+export const PROTOCOL = USE_SSL === 'true' ? 'https' : 'http';
+export const URL_PRODUCTION = `${PROTOCOL}://${HOST_PRODUCTION}:${PORT}`;
+export const URL_DEVELOPMENT = `${PROTOCOL}://${HOST_DEVELOPMENT}:${PORT}`;
+export const SERVER_URL = NODE_ENV === 'production' ? URL_PRODUCTION : URL_DEVELOPMENT;
